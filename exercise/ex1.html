@@ -1,0 +1,223 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Ex1: Distance to nearest vowel
+        // function distanceToNearestVowel(str) {
+        //     let vowels = ["a", "e", "i", "o", "u"];
+        //     let strArr = str.split("");
+        //     let vowelCount = 0;
+        //     for (let i = 0; i < strArr.length; i++) {
+        //         if (vowels.includes(strArr[i])) {
+        //             vowelCount++;
+        //         }
+        //     }
+        //     if (vowelCount == 0) {
+        //         console.log("No vowel was found.")
+        //     } else {
+        //         for (let letter in strArr) {
+        //             if (vowels.includes(strArr[letter])) {
+        //                 strArr.splice(letter, 1, 0);
+        //             }
+        //         }
+        //         console.log(strArr);
+        //         let indexOf0 = [];
+        //         for (let i = 0; i < strArr.length; i++) {
+        //             if (strArr[i] == 0) {
+        //                 indexOf0.push(i);
+        //             }
+        //         }
+        //         // console.log(indexOf0)
+        //         let distance;
+        //         let distanceArr = [];
+        //         for (let a = 0; a < strArr.length; a++) {
+        //             for (let b = 0; b < indexOf0.length; b++) {
+        //                 distance = Math.abs(a - indexOf0[b]);
+        //                 distanceArr.push(distance);
+        //                 // console.log(distance)
+        //             }
+        //             // console.log(distanceArr);
+        //             let min = Math.min(...distanceArr)
+        //             // console.log(min);
+        //             if (strArr[a] != 0) {
+        //                 strArr.splice(a, 1, min);
+        //             }
+        //             distanceArr.splice(0, distanceArr.length);
+        //         }
+        //     }
+        //     console.log(strArr);
+        // }
+        // distanceToNearestVowel("shopper")
+
+
+
+        // Ex2: Odd square patch
+        // function oddSquarePatch(arr) {
+        //     let array = [];
+        //     for (let i = 0; i < arr.length; i++) {
+        //         let count = 0;
+        //         let countArr = [];
+        //         for (let j = 0; j < arr[i].length; j++) {
+        //             if (arr[i][j] % 2 == 1) {
+        //                 count++;
+        //                 countArr.push(count);
+        //             } else {
+        //                 count = 0;
+        //                 countArr.push(count);
+        //             }
+        //         }
+        //         console.log(countArr);
+        //         array.push(countArr);
+        //     }
+        //     console.log(array)
+        //     let test0 = 0;
+        //     for (let a = 0; a < array.length; a++) {
+        //         if(!array[a].find(num => num > 0)) {
+        //             // console.log(" chỉ có 0")
+        //             test0 = 0;
+        //         }
+        //         else{
+        //             test0++;
+        //             // console.log("có số khác 0")
+        //         }
+        //     }
+        //     if (test0 == 0){
+        //         console.log("There is no odd square patch")
+        //     } else {
+
+        //     }
+        // }
+        // oddSquarePatch([
+        //     [1, 2, 4, 9],
+        //     [4, 5, 5, 7],
+        //     [3, 6, 1, 7]
+        // ])
+        // oddSquarePatch([
+        //     [2, 2, 4, 2],
+        //     [4, 4, 4, 4],
+        //     [6, 6, 6, 6]
+        // ])
+
+
+        // Ex3: Junction or Self
+        // function junctionOrSelf(num) {
+        //     if (!Number.isInteger(num) || num <= 0) {
+        //         console.log("Please insert a positive integer");
+        //     } else {
+        //         let numArr = [];
+        //         for (let i = 1; i <= num; i++) {
+        //             numArr.push(i);
+        //         }
+        //         let sumArr = [];
+        //         for (let j = 0; j < numArr.length; j++) {
+        //             let digitsArr = numArr[j].toString().split("");
+        //             let sum = 0;
+        //             let digit = 0;
+        //             for (let k = 0; k < digitsArr.length; k++) {
+        //                 digit = parseInt(digitsArr[k]);
+        //                 sum += digit;
+        //             }
+        //             sum += numArr[j];
+        //             console.log(sum)
+        //             sumArr.push(sum);
+        //         }
+        //         // console.log(sumArr)
+        //         if (sumArr.includes(num)) {
+        //             console.log(`${num} is a juntion number`);
+        //         } else {
+        //             console.log(`${num} is a self number`);
+        //         }
+
+        //     }
+        // }
+        // junctionOrSelf(7);
+
+
+
+        // Ex 4: Morse code decoded
+        // let morseToDots = {
+        //     ".-": "A", "-...": "B", "-.-.": "C", "-..": "D", ".": "E", "..-.": "F",
+        //     "--.": "G", "....": "H", "..": "I", ".---": "J", "-.-": "K", ".-..": "L",
+        //     "--": "M", "-.": "N", "---": "O", ".--.": "P", "--.-": "Q", ".-.": "R",
+        //     "...": "S", "-": "T", "..-": "U", "...-": "V", ".--": "W", "-..-": "X",
+        //     "-.--": "Y", "--..": "Z", "-----": "0", ".----": "1", "..---": "2",
+        //     "...--": "3", "....-": "4", ".....": "5", "-....": "6", "--...": "7",
+        //     "---..": "8", "----.": "9", "-.-.--": "!", "   ": " ", "..--..": "?",
+        //     ".-.-.-": ".", ".----.": "\"", "---...": ":", "--..--": ", ", " ": ""
+        // }
+        // function decodeMorse(morse) {
+        //     let morseWordArr = morse.split("  ");
+        //     let decodeWord = "";
+        //     let decodeMorse = "";
+        //     for(let a = 0; a<morseWordArr.length; a++) {
+        //         let morseLetterArr = morseWordArr[a].split(" ");
+        //         let decodeLetterArr = [];
+        //         for (let i = 0; i < morseLetterArr.length; i++) {
+        //             for (let key in morseToDots) {
+        //                 if (morseLetterArr[i] == key) {
+        //                     decodeLetterArr.push(morseToDots[`${key}`])
+        //                 }
+        //             }
+        //         }
+        //         // console.log(decodeLetterArr)
+        //         decodeWord = decodeLetterArr.join("");
+        //         decodeMorse += decodeWord + " ";
+        //         // console.log(decodeWord)
+        //         // console.log(decodeMorse)
+        //     }
+        //     console.log(decodeMorse)
+        // }
+        // decodeMorse(".... . .-.. .--.   -- .   -.-.--")
+        // decodeMorse("-.-. .... .- .-.. .-.. . -. --. .")
+
+
+        // Ex 5: Creating a picture frame
+        // let firstArr = [""];
+        // let lastArr = [""];
+        // function getFrame(width, height, char) {
+        //     if (width <= 2) {
+        //         console.log("Frame's width must be greater than 2.")
+        //     } else {
+        //         // firstRow
+        //         for (let i = 0; i < width; i++) {
+        //             firstArr[0] += char;
+        //         }
+        //         console.log(firstArr);
+        //         // middleRow
+        //         for (k = 0; k < height; k++) {
+        //             let middleArr = [""];
+
+        //             for (let j = 0; j < width; j++) {
+        //                 if (j == 0 || j == width - 1) {
+        //                     middleArr[0] += char;
+        //                 }
+        //                 else {
+        //                     middleArr[0] += " ";
+        //                 }
+        //             }
+        //             console.log(middleArr);
+
+        //         }
+        //         // lastRow
+        //         for (let i = 0; i < width; i++) {
+        //             lastArr[0] += char;
+        //         }
+        //         console.log(lastArr)
+        //     }
+        // }
+        // getFrame(4, 5, "#");
+        // // getFrame(10, 3, "*");
+        // // getFrame(2, 5, "0");
+
+
+
+    </script>
+</body>
+
+</html>
