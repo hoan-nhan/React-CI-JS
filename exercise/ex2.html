@@ -1,0 +1,336 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Ex 6: Magic Sigil Generator
+        // function sigilize(str) {
+        //     let strNoSpace = str.toLowerCase().replace(/ /g, "");
+        //     let letterArr = strNoSpace.split("");
+        //     let arr = [];
+        //     let vowels = ["a", "e", "i", "o", "u"];
+        //     let result = [];
+        //     console.log(letterArr);
+        //     for (let i = letterArr.length - 1; i >= 0; i--) {
+        //         if (!arr.includes(letterArr[i])) {
+        //             arr.splice(0, 0, letterArr[i]);
+        //         }
+        //     }
+        //     console.log(arr)
+        //     for (let j = 0; j < arr.length; j++) {
+        //         if(!vowels.includes(arr[j])){
+        //            result.push(arr[j]); 
+        //         }
+        //     }
+        //     console.log(result.join("").toUpperCase());
+        // }
+        // sigilize("i am healthy");
+        // sigilize("I FOUND MY SOULMATE");
+        // sigilize("I have a job I enjoy and it pays well")
+
+
+        // Ex 7: Digital Egomania: the Self-describing numbers
+        // function isSelfDescribing(num) {
+        //     let numArr = num.toString().split("");
+        //     let numCount = numArr.length;
+        //     if (numCount % 2 == 1 || num < 10) {
+        //         console.log(`${num} is not a self describing number`);
+        //     } else {
+        //         let instance;
+        //         let pair = [];
+        //         for (let i = 1; i <= numCount; i++) { // thử đổi thành i+2
+        //             if (i % 2 == 1) {
+        //                 instances = numArr[i - 1];
+        //                 // console.log(instances)
+        //                 let pos = 0;
+        //                 let index = -1;
+        //                 let count = 0;
+        //                 while (pos != -1) {
+        //                     pos = numArr.indexOf(numArr[i], index + 1);
+        //                     index = pos;
+        //                     if (pos != -1) {
+        //                         count++;
+        //                     }
+        //                 }
+        //                 // console.log(count)
+        //                 if (instances == count) {
+        //                     pair.push("true");
+        //                 } else {
+        //                     pair.push("false");
+        //                 }
+        //             }
+        //         }
+        //         if (!pair.includes("false")) {
+        //             console.log(`${num} is self describing`)
+        //         } else {
+        //             console.log(`${num} is not a self describing number`);
+        //         }
+        //     }
+        // }
+        // isSelfDescribing(10123331);
+        // isSelfDescribing(224444);
+        // isSelfDescribing(2211);
+        // isSelfDescribing(333);
+
+
+        // Ex 8: Check Magic Square
+        // function isMagicSquare(magicSquare) {
+        //     let falseResult = 0;
+        //     let sum = 0;
+        //     let horizonSum = 0;
+        //     let verticalSum = 0;
+        //     let test = [];
+        //     // tính sum chuẩn 
+        //     for (let x = 0; x < magicSquare[0].length; x++) {
+        //         sum += magicSquare[0][x];
+        //     }
+        //     // console.log(sum);
+        //     // kiểm tra input thoả điều kiện square
+        //     for (let i = 0; i < magicSquare.length; i++) {
+        //         if (magicSquare.length != magicSquare[i].length) {
+        //             falseResult++;
+        //         }
+        //     }
+        //     if (falseResult != 0) {
+        //         console.log("false")
+        //     } else {
+        //         for (let i = 0; i < magicSquare.length; i++) {
+        //             for (let j = 0; j < magicSquare[i].length; j++) {
+        //                 horizonSum += magicSquare[i][j];
+        //                 verticalSum += magicSquare[j][i]
+        //             }
+        //             // console.log(horizonSum);
+        //             // console.log(verticalSum);
+        //             if (horizonSum == sum && verticalSum == sum) {
+        //                 test.push("true");
+        //             } else {
+        //                 test.push("false")
+        //             }
+        //             horizonSum = 0;
+        //             verticalSum = 0
+        //         }
+
+
+        //         if (test.includes("false")) {
+        //             console.log("false")
+        //         } else {
+        //             console.log("true horizon & vertical")
+        //         }
+        //     }
+        // }
+        // isMagicSquare([
+        //     [8, 1, 6],
+        //     [3, 5, 7],
+        //     [4, 9, 2],
+        // ])
+        // isMagicSquare([
+        //     [1, 2, 3],
+        //     [4, 5, 6,],
+        //     [7, 8, 9],
+        // ])
+        // isMagicSquare([
+        //     [16,3,2,13],
+        //     [5,10,11,8],
+        //     [9,6,7,12],
+        //     [4,15,14,1],
+        // ])
+
+
+        // Ex 9: The fiscal code
+        // const months = {
+        //     1: "A",
+        //     2: "B",
+        //     3: "C",
+        //     4: "D",
+        //     5: "E",
+        //     6: "H",
+        //     7: "L",
+        //     8: "M",
+        //     9: "P",
+        //     10: "R",
+        //     11: "S",
+        //     12: "T",
+        // }
+        // const vowels = ["A", "E", "I", "O", "U"];
+        // function fiscalCode(object) {
+        // // Surname
+        //     let lastname = object.surname.toUpperCase();
+        //     let lastnameArr = lastname.split("");
+        //     let consonantArr = [];
+        //     let consonantCount = 0;
+        //     let result = "";
+        //     let surnameResult = "";
+        //     let nameResult = "";
+        //   // đếm số phụ âm
+        //     for (let i = 0; i < lastnameArr.length; i++) {
+        //         if (!vowels.includes(lastnameArr[i])) {
+        //             consonantArr.push(lastnameArr[i]);
+        //             consonantCount++;
+        //         }
+        //     }
+        //     // console.log(consonantCount)
+        //   // nếu có ít nhật 3 phụ âm 
+        //     if (consonantCount >= 3) {
+        //         for (let j = 0; j < 3; j++) {
+        //             surnameResult += consonantArr[j];
+        //         }
+        //         // console.log(surnameResult);
+        //     } 
+        //   // nếu có ít hơn 3 phụ âm  
+        //     else {
+        //       // cộng phụ âm
+        //         for (let k = 0; k < consonantCount; k++) {
+        //             surnameResult += consonantArr[k];
+        //         }
+        //       // cộng nguyên âm
+        //         for (let l = 0; l < lastnameArr.length; l++) {
+        //             if (vowels.includes(lastnameArr[l])) {
+        //                 surnameResult += lastnameArr[l];
+        //             }
+        //         }
+        //         // console.log(surnameResult);
+        //       // nếu kqua có nhiều hơn 3 chữ cái thì chỉ lấy 3 chữ cái đầu
+        //         if (surnameResult.split("").length >= 3) {
+        //             surnameResult = surnameResult.substring(0, 3);
+        //         } 
+        //       // nếu kqua có ít hơn 3 chữ cái thì cộng thêm chữ X  
+        //         else {
+        //             surnameResult += "X"
+        //         }
+        //         // console.log(surnameResult);
+        //     }
+        // // Name
+        //     consonantArr = [];
+        //     consonantCount = 0;
+        //     let firstname = object.name.toUpperCase();
+        //     let firstnameArr = firstname.split("");
+        //   // đếm số phụ âm
+        //     for (let i = 0; i < firstnameArr.length; i++) {
+        //         if (!vowels.includes(firstnameArr[i])) {
+        //             consonantCount++;
+        //         }
+        //     }
+        //   // nếu có đúng 3 phụ âm
+        //     if (consonantCount == 3) {
+        //         for (let i = 0; i < firstnameArr.length; i++) {
+        //             if (!vowels.includes(firstnameArr[i])) {
+        //                 nameResult += firstnameArr[i]
+        //             }
+        //         }
+        //         // console.log(nameResult);
+        //     } 
+        //   // nếu có nhiều hơn 3 phụ âm thì lấy phụ âm thứ 1, 3, 4 => index 0, 2, 3  
+        //     else if (consonantCount > 3) {
+        //       // lọc ra các phụ âm vào consonantArr  
+        //         for (let i = 0; i < firstnameArr.length; i++) {
+        //             if (!vowels.includes(firstnameArr[i])) {
+        //                 consonantArr.push(firstnameArr[i]);
+        //             }
+        //         }
+        //         nameResult += consonantArr[0] + consonantArr[2] + consonantArr[3];
+        //         // console.log(nameResult);
+        //     } 
+        //   // nếu có ít hơn 3 phụ âm   
+        //     else {
+        //       // cộng phụ âm  
+        //         for (let i = 0; i < firstnameArr.length; i++) {
+        //             if (!vowels.includes(firstnameArr[i])) {
+        //                 nameResult += firstnameArr[i]
+        //             }
+        //         }
+        //       // cộng nguyên âm  
+        //         for (let j = 0; j < firstnameArr.length; j++) {
+        //             if (vowels.includes(firstnameArr[j])) {
+        //                 nameResult += firstnameArr[j];
+        //             }
+        //         }
+        //       // nếu kqua có nhiều hơn 3 chữ cái thì chỉ lấy 3 chữ cái đầu
+        //         if (nameResult.split("").length >= 3) {
+        //             nameResult = nameResult.substring(0, 3);
+        //         }
+        //       // nếu kqua có ít hơn 3 chữ cái thì cộng thêm chữ X  
+        //         else {
+        //             nameResult += "X"
+        //         }
+        //         console.log(nameResult);
+        //     }
+        // // 2 số cuối năm sinh
+        //   // tao dob array để tìm index
+        //     let year = object.dob.slice(-2);
+        // // tháng sinh
+        //     let pos = 0;
+        //     let posArr = [];
+        //     let index = -1;
+        //     let month = ""
+        //   // tìm số tháng sinh trong dob  
+        //     while (pos != -1) {
+        //         pos = object.dob.indexOf("/", index+1);
+        //         index = pos;
+        //         if (pos != -1) {
+        //             posArr.push(pos);
+        //         }
+        //     }
+        //     // console.log(posArr)
+        //     month = object.dob.slice(posArr[0]+1,posArr[1])
+        //     // console.log(month)
+        //   // chuyển tháng sinh thành letterletter
+        //     let monthLetter = "";
+        //     for (let mth in months) {
+        //         if (month == mth){
+        //             monthLetter = months[mth];
+        //         }
+        //     } 
+        //     // console.log(monthLetter) 
+        // // ngày sinh
+        //     let date = object.dob.slice(0,posArr[0]);
+        //     if (object.gender == "M") {
+        //         if (date < 10) {
+        //             date = 0 + date;
+        //         }
+        //     } else if (object.gender == "F") {
+        //         date = parseInt(date) + 40;
+        //     }
+        //     console.log(surnameResult+nameResult+year+monthLetter+date);
+        // }
+        // fiscalCode({
+        //     name: "Matt",
+        //     surname: "Edabit",
+        //     gender: "M",
+        //     dob: "1/1/1900",
+        // })
+        // fiscalCode({
+        //     name: "Helen",
+        //     surname: "Yu",
+        //     gender: "F",
+        //     dob: "1/12/1950",
+        // })
+        // fiscalCode({
+        //     name: "Mickey",
+        //     surname: "Mouse",
+        //     gender: "M",
+        //     dob: "16/1/1928",
+        // })
+
+
+        // Ex 10: Number of Boomerangs
+        // function countBoomerangs (arr){
+        //     let count = 0;
+        //     for (let i = 0; i < arr.length; i++) {
+        //         if (arr[i]==arr[i+2] && arr[i] != arr[i+1]) {
+        //             count ++;
+        //         }
+        //     };
+        //     console.log(count);
+        // }
+        // countBoomerangs([9,5,9,5,1,1,1])
+        // countBoomerangs([5,6,6,7,6,3,9])
+        // countBoomerangs([4,4,4,9,9,9,9])
+    </script>
+</body>
+
+</html>
