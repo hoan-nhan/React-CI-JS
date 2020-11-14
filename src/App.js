@@ -2,8 +2,9 @@ import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import {Header} from './Components/header'
-import {SearchBar} from './Components/searchbar'
+import {SearchBar} from './Components/searchBar'
 import {Emoji} from './Components/emoji'
+
 import * as emojiList from './resources/emojiList'
 
 console.log(emojiList)
