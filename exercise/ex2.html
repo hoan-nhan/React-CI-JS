@@ -98,7 +98,9 @@
         //     }
         //     if (falseResult != 0) {
         //         console.log("false")
-        //     } else {
+        //     } 
+        //     // tính sum của row & column => true/false horizon/vertical
+        //     else {
         //         for (let i = 0; i < magicSquare.length; i++) {
         //             for (let j = 0; j < magicSquare[i].length; j++) {
         //                 horizonSum += magicSquare[i][j];
@@ -114,12 +116,38 @@
         //             horizonSum = 0;
         //             verticalSum = 0
         //         }
+        //         // tính sum của 2 diagonal
+        //             // backslash
+        //         let backslashSum = 0;
+        //         for (let a = 0; a < magicSquare.length; a++) {
+        //             for (let b = 0; b < magicSquare[a].length; b++) {
+        //                 if(a==b) {
+        //                     backslashSum += magicSquare[a][b];
+        //                 }
+        //             }
+        //         }
+        //         // console.log(backslashSum)
+        //             // forwad slash
+        //         let forwardSlashSum = 0;
+        //         for (let a = 0; a < magicSquare.length; a++) {
+        //             for (let b = 0; b < magicSquare[a].length; b++) {
+        //                 if(a+b==magicSquare.length-1) {
+        //                     forwardSlashSum += magicSquare[a][b];
+        //                 }
+        //             }
+        //         }
+        //         // console.log(forwardSlashSum)
+        //         if(backslashSum == sum && forwardSlashSum == sum) {
+        //             test.push("true")
+        //         }else{
+        //             test.push("false")
+        //         }
 
 
         //         if (test.includes("false")) {
         //             console.log("false")
         //         } else {
-        //             console.log("true horizon & vertical")
+        //             console.log("true")
         //         }
         //     }
         // }
