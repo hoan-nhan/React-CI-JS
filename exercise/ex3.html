@@ -1,0 +1,178 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Ex 6: Digitaldrome 
+        // function digitaldrome(num) {
+        //     let numArr = num.toString().split("");
+        //     let test = [];
+        //     let result;
+        //     // ascending
+        //     for (let i = 0; i < numArr.length - 1; i++) {
+        //         if (parseInt(numArr[i + 1]) > parseInt(numArr[i])) {
+        //             test.push("true");
+        //         } else if (parseInt(numArr[i + 1]) == parseInt(numArr[i])) {
+        //             test.push("equal")
+        //         }
+        //         else {
+        //             test.push("false")
+        //         }
+        //     }
+        //     if (test.includes("true") && !test.includes("false") && !test.includes("equal")) {
+        //         result = "Metadrome"
+        //         console.log(result)
+        //     } else if (test.includes("true") && !test.includes("false") && test.includes("equal")) {
+        //         result = "Plaindrome"
+        //         console.log(result)
+        //     }
+        //     // descendingcending
+        //     test = [];
+        //     for (let j = 0; j < numArr.length - 1; j++) {
+        //         if (parseInt(numArr[j + 1]) < parseInt(numArr[j])) {
+        //             test.push("true");
+        //         } else if (parseInt(numArr[j + 1]) == parseInt(numArr[j])) {
+        //             test.push("equal");
+        //         } else {
+        //             test.push("false");
+        //         }
+        //     }
+        //     if (test.includes("true") && !test.includes("false") && !test.includes("equal")) {
+        //         result = "Katadrome";
+        //         console.log(result)
+        //     } else if (test.includes("true") && !test.includes("false") && test.includes("equal")) {
+        //         result = "Nialpdrome";
+        //         console.log(result)
+        //     }
+        //     // single repeating digit
+        //     test = [];
+        //     for (let k = 0; k < numArr.length - 1; k++) {
+        //         if (numArr[k] == numArr[k + 1]) {
+        //             test.push("true");
+        //         } else {
+        //             test.push("false");
+        //         }
+        //     }
+        //     if (!test.includes("false")) {
+        //         result = "Repdrome";
+        //         console.log(result)
+        //     }
+        //     // nondrome
+        //     test = [];
+        //     if (typeof result == "undefined") {
+        //         result = "Nondrome";
+        //         console.log(result);
+        //     }
+        // }
+        // digitaldrome(1357);
+        // digitaldrome(12344);
+        // digitaldrome(7531);
+        // digitaldrome(9874441);
+        // digitaldrome(666)
+        // digitaldrome(1985)
+
+
+        // Ex 7: Poker Flush
+        // function checkFlush (arr5,arr2) {
+        //     let check = arr5.concat(arr2);
+        //     console.log(check)
+        //     let cardSuit;
+        //     let cardSuitArr = [];
+        //     let spadeCount = 0;
+        //     let clubCount = 0;
+        //     let diamondcount = 0;
+        //     let heartCount = 0;
+        //     for (let i = 0; i < check.length; i++) {
+        //         cardSuit = check[i].slice(-1);
+        //         cardSuitArr.push(cardSuit);
+        //     }
+        //     console.log(cardSuitArr);
+        //     for (let j = 0; j < cardSuitArr.length; j++) {
+        //         if (cardSuitArr[j] == "S") {
+        //             spadeCount++;
+        //         } else if (cardSuitArr[j] == "C") {
+        //             clubCount++;
+        //         } else if (cardSuitArr[j] == "D") {
+        //             diamondcount++;
+        //         } else {
+        //             heartCount++;
+        //         }
+        //     }
+        //     if (spadeCount>=5 || clubCount>=5 || diamondcount>=5 || heartCount>=5) {
+        //         console.log("true")
+        //     } else {
+        //         console.log("false")
+        //     }
+        // }
+        // checkFlush(["A_S", "J_H", "7_D", "8_D", "10_D"], ["J_D", "3_D"])
+        // checkFlush(["10_S", "7_S", "9_H", "4_S", "5_S"], ["K_S", "Q_S"])
+        // checkFlush(["3_S", "10_H", "10_D", "10_C", "10_S"], ["3_S", "4_D"])
+
+
+        // Ex 8: Dice gambling
+        // function rolls(arr) {
+        //     let sum = 0;
+        //     for (let i = 0; i < arr.length; i++) {
+        //         if (arr[i-1]==1) {
+        //             sum += arr[i]*0;
+        //         }
+        //         else if (arr[i-1] == 6) {
+        //             sum += arr[i]*2;
+        //         } else {
+        //             sum += arr[i];
+        //         }
+        //     }
+        //     console.log(sum)
+        // }
+        // rolls([1, 2, 3]);
+        // rolls([2,6,2,5]);
+        // rolls([6,1,1])
+        // rolls([1,6,2])
+
+        // Ex 10: Chinese zodiac
+        // let earthlyBranches = ["Rat", "Ox", "Tiger", "Rabbit", "Dragon", "Snake", "Horse", "Sheep", "Monkey", "Rooster", "Dog", "Pig"];
+        // let heavenlyStems = ["Wood", "Fire", "Earth", "Metal", "Water"];
+        // function sexagenary(year) {
+        //     let result = [];
+        //     let standardYear = 1984;
+        //     let yearGapStem = yearGapBranch = year - standardYear;
+        //     // heavenly stems
+        //     while (yearGapStem >= 10) {
+        //         yearGapStem -= 10;
+        //     }
+        //     while (yearGapStem <= -10) {
+        //         yearGapStem += 10;
+        //     }
+        //     yearGapStem = Math.floor(yearGapStem/2);
+        //     if (yearGapStem >= 0) {
+        //         result.push(heavenlyStems[yearGapStem])
+        //     } else {
+        //         result.push(heavenlyStems[yearGapStem+5])
+        //     }
+        //     // console.log(result);
+        //     // earthly branches
+        //     while (yearGapBranch >= 12) {
+        //         yearGapBranch -= 12;
+        //     }
+        //     while (yearGapBranch <= -12) {
+        //         yearGapBranch += 12;
+        //     }
+        //     if (yearGapBranch >= 0) {
+        //         result.push(earthlyBranches[yearGapBranch]);
+        //     } else {
+        //         result.push(earthlyBranches[yearGapBranch + 12]);
+        //     }
+        //     console.log(result)
+        // }
+        // sexagenary(1971); 
+        // sexagenary(1927); 
+        // sexagenary(1974); 
+    </script>
+</body>
+
+</html>
