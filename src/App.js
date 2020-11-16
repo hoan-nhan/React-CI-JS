@@ -5,7 +5,7 @@ import {Header} from './Components/header'
 import {SearchBar} from './Components/searchBar'
 import {Emoji} from './Components/emoji'
 
-import * as emojiList from './resources/emojiList'
+import {emojiList} from './resources/emojiList'
 
 console.log(emojiList)
 function App() {
