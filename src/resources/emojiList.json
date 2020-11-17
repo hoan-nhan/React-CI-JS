@@ -1,4 +1,4 @@
-export const emojiList = [
+[
   {
     "title": "100",
     "symbol": "💯",
@@ -9201,5 +9201,4 @@ export const emojiList = [
     "title": "Regional Indicator a",
     "symbol": "🇦",
     "keywords": "regional indicator symbol letter a"
-  }
-]
+  }]

@@ -5,16 +5,30 @@ import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
 import { firebaseConfig } from '../config/firebase.config'
-try {
-    firebase.initializeApp(firebaseConfig);
-} catch (e) {
-    console.log(e.message)
-}
-const db = firebase.firestore();
+import { emojilist } from '../resources/emojiList';
+// try {
+//     firebase.initializeApp(firebaseConfig);
+// } catch (e) {
+//     console.log(e.message)
+// }
+// const db = firebase.firestore();
 
 export class SearchBar extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {searchText: 'hehe'}
+        this.EnterInput = this.EnterInput.bind(this)
+    }
+    EnterInput(e) {
+        // handle sự kiện onchange
+        this.setState({searchText:e.target.value})
+        // console.log(this.setState.searchText)
+        // filter để show 20 emiji có include enterinput
+        for (let i = 0; i < emojilist.length; i++) {
+            if (emojilist[i].keywords.includes(this.setState.searchText)) {
+                
+            }
+        }
     }
     // componentDidMount() {
     //     // db.collection("users").add({
@@ -37,7 +51,7 @@ export class SearchBar extends React.Component {
     // }
     render() {
         return (
-            <input className="full" type="text" placeholder="Enter your emoji" />
+            <input onChange={this.EnterInput} className="full" type="text" placeholder="Enter your emoji" />
         )
     }
 }
