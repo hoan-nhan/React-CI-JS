@@ -1,0 +1,8 @@
+#root .emoList {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.emoList p {
+    /* text-align: center; */
+    padding-left: 30px;
+}
