@@ -4,7 +4,7 @@ export function Book (props) {
     return(
         <React.Fragment>
             <div>
-                <h4>Book name</h4>
+                {/* <h4>{props.</h4> */}
                 <div>
                     <img  alt="Book cover"/>
                     <div>

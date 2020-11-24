@@ -11,20 +11,34 @@ export class App extends React.Component {
     this.state = {SearchText:""}
     this.handleInput=this.handleInput.bind(this)
     this.getBook=this.getBook.bind(this)
+    this.genBook=this.genBook.bind(this)
   }
   handleInput(e) {
-    this.setState ({SearchText: e.target.value})
+    if (e.key==='Enter') {
+      this.setState ({SearchText: e.target.value})
+      // console.log(this.state)
+    }
   }
   getBook(searchText) {
     fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchText}`)
     .then(res=>res.json())
-    // .then(book=>return book)
+    // .then(book=>console.log(book))
+    .then(books => this.setState({books}))
+  }
+  genBook() {
+    // let obj = this
+    let bookList = [];
+    bookList.push(this.state.books.items)
+    console.log(bookList)
+    // bookList.map((book) => )
   }
   render() {
+    console.log(this.state.SearchText)
     return (
       <React.Fragment>
-        <Search onChange_={this.handleInput}/>
-        <Book />
+        <Search onClick_={() => this.getBook(this.state.searchText)}/>
+        {/* <Search onClick_={() => this.getBook(this.handleInput)}/> */}
+        <Book/>
       </React.Fragment>
     );
   }
