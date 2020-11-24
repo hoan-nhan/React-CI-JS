@@ -1,25 +1,33 @@
 import logo from './logo.svg';
 import './App.css';
+import React from 'react'
+import { Search } from './Components/Search';
+import { Book } from './Components/Book'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+export class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {SearchText:""}
+    this.handleInput=this.handleInput.bind(this)
+    this.getBook=this.getBook.bind(this)
+  }
+  handleInput(e) {
+    this.setState ({SearchText: e.target.value})
+  }
+  getBook(searchText) {
+    fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchText}`)
+    .then(res=>res.json())
+    // .then(book=>return book)
+  }
+  render() {
+    return (
+      <React.Fragment>
+        <Search onChange_={this.handleInput}/>
+        <Book />
+      </React.Fragment>
+    );
+  }
 }
 
 export default App;
