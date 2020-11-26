@@ -7,16 +7,24 @@ import {Meal} from './Components/Meal'
 export class App extends React.Component {
   constructor(props) {
     super(props)
+    this.state = {}
     this.getMeal=this.getMeal.bind(this)
   }
   getMeal() {
     fetch('https://www.themealdb.com/api/json/v1/1/random.php')
     .then(res=>res.json())
     // .then(data=>console.log(data))
-    .then(mealObj => this.setState({mealObj}))
+    .then(mealObj => {
+      console.log(mealObj)
+      // this.setState({mealObj})
+      this.setState(mealObj)
+    })
   }
   render() {
-    console.log(this.state)
+    {this.state.meals ? console.log(this.state.meals[0]) : console.log("error app")}
+    // console.log(this.state)
+    // console.log(this.state.meals)
+    // console.log(this.state.meals[0]) => err do this.state.meals là undefined khi chưa setState
     return (
       <React.Fragment>
         <Click onClick_={this.getMeal}/>
