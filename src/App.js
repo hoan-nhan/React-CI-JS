@@ -20,6 +20,9 @@ class App extends React.Component {
         if (data.cod === 404 + "") {
           this.setState({ message: "Please search for a valid city 😩" });
         } else {
+          // Nhân thêm 2 dòng console.log để hiểu là data nào
+          // console.log(this.state.data)
+          // console.log(data)
           let currentData = this.state.data;
           currentData.push(data);
           this.setState({ data: currentData, message: "" });

@@ -2,6 +2,8 @@ import React from "react";
 import "./Weathers.css";
 
 function generatorWeather(weathers) {
+  // Nhân thêm console.log để biết dạng dữ liệu truyền vào (weathers)
+  // console.log(weathers);
   return weathers.map((weather) => {
     const icon = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${weather.weather[0]["icon"]}.svg`;
     return (
