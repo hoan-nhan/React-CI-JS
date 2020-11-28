@@ -11,12 +11,12 @@ export class App extends React.Component {
     this.state = {SearchText:""}
     this.handleInput=this.handleInput.bind(this)
     this.getBook=this.getBook.bind(this)
-    this.genBook=this.genBook.bind(this)
   }
   handleInput(e) {
     if (e.key==='Enter') {
-      this.setState ({SearchText: e.target.value})
-      // console.log(this.state)
+      // this.setState ({SearchText: e.target.value})
+      return e.target.value
+      console.log(e.target.value)
     }
   }
   getBook(searchText) {
@@ -26,11 +26,9 @@ export class App extends React.Component {
     .then(books => this.setState({books}))
   }
   genBook() {
-    // let obj = this
     let bookList = [];
     bookList.push(this.state.books.items)
     console.log(bookList)
-    // bookList.map((book) => )
   }
   render() {
     console.log(this.state.SearchText)
