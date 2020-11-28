@@ -1,19 +1,34 @@
 import React from 'react'
 
-export function Book (props) {
-    return(
-        <React.Fragment>
-            <div>
-                {/* <h4>{props.</h4> */}
+function genBook(props) {
+    // console.log(props)
+    // console.log(props.items)
+    // let bookList = [];
+    // bookList.push(props.books.items)
+    // console.log(bookList)
+    return props.items.map((book) => {
+        return (
+            <React.Fragment>
                 <div>
-                    <img  alt="Book cover"/>
+                    {/* <h4>{props.items}</h4> */}
                     <div>
-                        <p>Author</p>
-                        <p>Publisher</p>
-                        <p>Published</p>
+                        <img alt="Book cover" src={book.volumeInfo.imageLinks.smallThumbnail}/>
+                        <div>
+                            <p>Author:{book.volumeInfo.authors}</p>
+                            <p>Publisher:{book.volumeInfo.publisher}</p>
+                            <p>Published:{book.volumeInfo.publishedDate}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </React.Fragment>
+            </React.Fragment>
+        )
+    }
     )
+
+}
+
+export function Book(props) {
+    console.log(props.bookInfo)
+    return (
+        props.bookInfo ? genBook(props.bookInfo) : null)
 }
