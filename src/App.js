@@ -14,13 +14,12 @@ export class App extends React.Component {
   }
   handleInput(e) {
     e.preventDefault()
-    if (e.key === 'Enter') {
-      this.getBook(e.target.value)
-      // this.setState({ SearchText: e.target.value })
-      // console.log(e.target.value)
-      // return e.target.value
-      // console.log(e.target.value)
-    }
+    // if (e.key === 'Enter') {
+    this.getBook(e.target.value)
+    this.setState({ SearchText: e.target.value })
+    console.log(e.target.value)
+    // return e.target.value
+    // }
   }
   getBook(searchText) {
     fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchText}`)
@@ -42,8 +41,8 @@ export class App extends React.Component {
     return (
       <React.Fragment>
         {/* <Search onKeyDown_={()=>this.getBook(this.handleInput())} /> */}
-        <Search onKeyDown_={this.handleInput}/>
-        <Book bookInfo={this.state.books}/>
+        <Search onSubmit_={this.handleInput} />
+        <Book bookInfo={this.state.books} />
       </React.Fragment>
     );
   }
